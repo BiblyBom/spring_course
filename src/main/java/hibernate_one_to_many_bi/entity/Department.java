@@ -23,7 +23,7 @@ public class Department {
     private int minSalary;
 
     @OneToMany (cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE},
-                mappedBy = "department")
+                mappedBy = "department", fetch = FetchType.EAGER)
     private List<Employee> emps;
 
     public Department() {
